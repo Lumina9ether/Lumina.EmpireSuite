@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 
 // Landing Page Component
@@ -18,10 +19,9 @@ export function LandingPage() {
       containerWidth: "100%",
       layoutWidth: "400px",
       enableReset: true,
-      stylesheet: "",
       themeName: "prism",
       botName: "Lumina",
-      avatarUrl: "https://yourdomain.com/lumina-avatar.png",
+      avatarUrl: "https://yourdomain.com/lumina-avatar-glow.png",
       stylesheetOptions: {
         botMessageColor: "#6366f1",
         userMessageColor: "#a78bfa",
@@ -75,7 +75,6 @@ export function LandingPage() {
       speakWithElevenLabs("Hey love, I'm Lumina. How can I support your empire today?");
 
       if (!SpeechRecognition) {
-        console.warn("Speech recognition not supported in this browser.");
         speakWithElevenLabs("Voice recognition is not supported in your browser.");
         return;
       }
@@ -103,15 +102,18 @@ export function LandingPage() {
       };
 
       recognition.onerror = (event) => {
-        console.error("Voice recognition error:", event.error);
         speakWithElevenLabs("Hmm, I didn’t catch that. Try again when you're ready.");
       };
     });
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-indigo-900 to-indigo-950 text-white p-8">
-      <h1 className="text-4xl">Lumina Empire</h1>
+    <div className="min-h-screen bg-black text-white p-8 text-center">
+      <h1 className="text-4xl font-bold mb-4">Awaken Your Empire</h1>
+      <p className="mb-6">Download the Empire Activation Guide and align with your divine mission.</p>
+      <a href="#form" className="bg-indigo-600 hover:bg-indigo-500 px-6 py-3 rounded-xl text-white font-semibold shadow-lg transition-all">
+        Activate Now
+      </a>
     </div>
   );
 }
