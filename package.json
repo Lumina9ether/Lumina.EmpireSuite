@@ -1,10 +1,11 @@
 
 {
-  "name": "lumina-empire-tailwind",
+  "name": "lumina-empire-final",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "tailwind": "npx tailwindcss -i ./style.css -o ./dist/output.css --minify",
     "preview": "vite preview"
   },
   "dependencies": {
